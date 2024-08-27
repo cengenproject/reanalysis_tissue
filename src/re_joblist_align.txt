@@ -1,0 +1,2 @@
+module load STAR/2.7.11a-GCC-12.2.0; ./src/dsq_star_align.sh 3
+module load STAR/2.7.11a-GCC-12.2.0; ./src/dsq_star_align.sh 7
