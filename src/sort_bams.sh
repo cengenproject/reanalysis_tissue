@@ -10,7 +10,7 @@ echo "Start at $start"
 in_dir="/vast/palmer/scratch/hammarlund/aw853/2408_reanalysis/bams_unsorted"
 out_dir="/vast/palmer/scratch/hammarlund/aw853/2408_reanalysis/bams_sorted"
 
-sampleList=( $(ls $in_dir/*.bam) )
+sampleList=( $( basename -a $( ls $in_dir/*.bam ) ) )
 
 sampleList=(${sampleList[@]:$start:4})
 
@@ -26,7 +26,7 @@ do
     -o $out_dir/$sample \
     $in_dir/$sample
   
-  samtools index -@ 5 $out_dir/sample
+  samtools index -@ 5 $out_dir/$sample
   
 done
 
