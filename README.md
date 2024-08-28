@@ -31,6 +31,9 @@ note we don't continue processing samples SRR6238102-6238111 here as they are th
 
 Stringtie quantification with `src/stringtie.sh`, then export the TPMs with `summarize_stringtie_q.R` (ran manually on cluster). That gives us the `intermediates/240827_strq_outs/240828_tx_TPM.tsv` file.
 
+Manually deleted the first header `transcript_id\t` so that the header starts with sample names.
+
+Finally, run `src/suppa.sh` to get PSI per event, analyze in repo `suppa_events`.
 
 
 
