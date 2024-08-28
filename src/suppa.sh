@@ -20,11 +20,10 @@ WS="WS289"
 
 
 events_file="../suppa_events/data/events/${WS}_all_strict.ioe"
-tx_tpm="intermediates/240827_strq_outs/240828_tx_TPM.tsv"
+tx_tpm="intermediates/240827_strq_outs/summaries/240828_tx_TPM.tsv"
 
 out_dir="intermediates/240828_psiPerEvent"
 
-mkdir -p $out_dir
 
 
 # Note we gathered all events in single file with:
