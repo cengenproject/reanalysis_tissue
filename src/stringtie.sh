@@ -65,6 +65,9 @@ echo "Reading samples from $bam_dir"
 mapfile -t sampleList < <(ls $bam_dir/*.bam | xargs basename -a -s .bam)
 mapfile -t tissueList < <(ls $bam_dir/*.bam | xargs basename -a -s .bam | cut -f1 -d"_")
 
+sampleList=(${sampleList[@]:4:6})
+tissueList=(${tissueList[@]:4:6})
+
 if [ ${#sampleList[@]} -lt 1 ]
   then
   echo "Error: failed to find samples."
@@ -143,8 +146,8 @@ echo
 
 module load R
 
-
-Rscript src/summarize_stringtie_q_output.R $out_dir/quantifications $out_dir/summaries
+# this part is for the app, not using here
+# Rscript src/summarize_stringtie_q_output.R $out_dir/quantifications $out_dir/summaries
 
 
 echo
