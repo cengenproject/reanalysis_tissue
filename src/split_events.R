@@ -46,7 +46,7 @@ psi <- read.delim(opt$input_path)
 
 
 samples <- names(psi)
-neurons <- stringr::str_match(samples, "^([A-Zef0-9]{2,4})r[0-9]{1,4}")[,2]
+neurons <- stringr::str_match(samples, "^([a-z]+)_[0-9]{7}")[,2]
 
 stopifnot(all(! is.na(neurons) ))
 
