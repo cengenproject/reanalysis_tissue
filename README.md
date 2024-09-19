@@ -35,7 +35,7 @@ Stringtie quantification with `src/stringtie.sh`, then export the TPMs with `sum
 
 Manually deleted the first header `transcript_id\t` so that the header starts with sample names.
 
-Finally, run `src/suppa_psi.sh` to get PSI per event, analyze in repo `suppa_events`.
+Finally, run `src/suppa_psi.sh` to get PSI per event and `src/suppa_dpsi.sh` for deltaPSI, analyze in repo `suppa_events` along with the neuronal quantifications.
 
 
 
