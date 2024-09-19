@@ -22,7 +22,7 @@ WS="WS289"
 events_file="../suppa_events/data/events/${WS}_all_strict.ioe"
 tx_tpm="intermediates/240827_strq_outs/summaries/240828_tx_TPM.tsv"
 
-out_dir="intermediates/240828_psiPerEvent"
+out_dir="intermediates/240918_psiPerEvent"
 
 
 
@@ -35,7 +35,7 @@ suppa.py psiPerEvent \
     --mode INFO \
     --ioe-file $events_file \
     --expression-file $tx_tpm \
-    --total-filter 10 \
+    --total-filter 5 \
     --output-file $out_dir
 
 

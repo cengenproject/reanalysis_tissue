@@ -1,9 +1,9 @@
 #!/bin/bash
-#SBATCH --partition=week
+#SBATCH --partition=day
 #SBATCH --job-name=suppa_dpsi
 #SBATCH -c 1
 #SBATCH --mem=5G
-#SBATCH --time=3-20:30:00
+#SBATCH --time=5:30:00
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=alexis.weinreb@yale.edu
 
@@ -19,23 +19,24 @@ WS="WS289"
 
 events_file="../suppa_events/data/events/${WS}_all_strict.ioe"
 tx_tpm="intermediates/240827_strq_outs/summaries/240828_tx_TPM.tsv"
-psi_file="intermediates/240828_psiPerEvent.psi"
+psi_file="intermediates/240918_psiPerEvent.psi"
 
 # note, the "prefix" should not be a separate directory!
-out_dpsi="intermediates/240828_dpsi/"
-out_prefix="240828"
+out_dpsi="intermediates/240918_dpsi/"
+out_prefix="240918"
 
-split_psi_dir="intermediates/240828_split_psi"
+split_psi_dir="intermediates/240918_split_psi"
 
 
 mkdir -p $out_dpsi
+mkdir -p $split_psi_dir
 
 
 
 
 echo "Splitting PSI/TPM"
 
-module load R
+module load R/4.2.0-foss-2020b
 Rscript src/split_events.R \
     --input_path $psi_file \
     --output_path $split_psi_dir \
